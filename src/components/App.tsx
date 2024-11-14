@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import PokemonCard from "./PokemonCard";
 import BattleLog from "./BattleLog";
 
 interface Pokemon {
+  id: number;
   name: string;
   moves: { move: { name: string }; power: number }[];
   sprite: string;
@@ -20,6 +21,7 @@ const App: React.FC = () => {
     // Pick a random move
     const randomMoveIndex = Math.floor(Math.random() * data.moves.length);
     return {
+      id: data.id,
       name: data.name,
       moves: [
         {
@@ -62,9 +64,9 @@ const App: React.FC = () => {
     }
   };
 
-  /*   useEffect(() => {
+  useEffect(() => {
     selectRandomPokemon();
-  }, [selectRandomPokemon]); */
+  }, [selectRandomPokemon]);
 
   return (
     <div className="flex flex-col items-center mt-20">
