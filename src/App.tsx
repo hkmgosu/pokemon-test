@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-import PokemonCard from "./PokemonCard";
-import BattleLog from "./BattleLog";
+import PokemonCard from "./components/PokemonCard";
+import BattleLog from "./components/BattleLog";
 
 interface Pokemon {
   id: number;
